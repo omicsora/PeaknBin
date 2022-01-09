@@ -1,2 +1,2 @@
 # PeaknBin
-It contains a collection of chip-seq data analysed from public repostories
+It contains a collection of ChIP-Seq data analysed from public repostories
