@@ -1,0 +1,59 @@
+*
+{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+.header
+{
+	background: rgb(0,0,0);
+	text-align: center;
+	padding: 60px;
+  	color: white;
+ 	font-size: 20px;
+}
+body
+{
+	background-image:url("https://media.istockphoto.com/vectors/abstract-hexagon-wallpaper-white-background-3d-vector-illustration-vector-id1212342896?k=20&m=1212342896&s=612x612&w=0&h=fp3B4g_hE54snO4Nf1ggElVnI0gD9s7tPd5JU0eFl9Q");
+	background-size: cover;
+	background-position:center;
+
+	font-family: sans-serif;
+}
+.menu-bar
+{
+	background:rgb(0,120,0);
+	text-align: center;
+}
+.menu-bar ul
+{
+	display: inline-flex;
+	list-style: none;
+	color: #fff;
+}
+.menu-bar ul li
+{
+	width: 120px;
+	margin: 15pb;
+	padding: 15px;
+}
+.menu-bar ul li a
+{
+	text-decoration: none;
+	color: #fff;
+}
+.active, .menu-bar ul li:hover
+{
+	background: #2bab0d;
+	border-radius: 3px;
+}
+label {
+  background-color: white;
+  color: black;
+  font-family: sans-serif;
+  text-align: center
+
+}
+
+
+
