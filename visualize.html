@@ -22,15 +22,27 @@
 </div>
 <br /><br />
 <br /><br />
-<!-- header source -->
-<script src="https://www.givengine.org/bower_components/webcomponentsjs/webcomponents-loader.js"></script>
-<link rel="import" href="https://www.givengine.org/components/chart-controller/chart-controller.html">
+    <script src="igv.js"></script>
+    <div id="igv-div"></div>
 
-<!-- embed the browser in the web page -->
-<chart-controller
-  ref="hg19"
-  num-of-subs="2"
-  coordinate='["chr18:19140000-19450000", "chr18:19140000-19450000"]'
-  group-id-list='["genes", "CHi-C_promoter"]'
-></chart-controller>
+    <script>
+            var igvDiv = document.getElementById("igv-div");
+          var options =
+            {
+                genome: "mm9",
+                locus: "chr8:127,736,588-127,739,371",
+                tracks: [
+                    {
+                        "name": "CTCF",
+                        "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM1036nnn/GSM1036125/suppl/GSM1036125_E10.5_hindlimb_CTCF_ChIP_seq_rep2.bw",
+                        "format": "bigwig",
+                    }
+                ]
+            };
+
+            igv.createBrowser(igvDiv, options)
+                    .then(function (browser) {
+                        console.log("Created IGV browser");
+                    })
+    </script>
 </body>
