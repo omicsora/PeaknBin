@@ -22,24 +22,15 @@
 </div>
 <br /><br />
 <br /><br />
-<p style="text-align:center;"><label>Select the peak file: </label></p><br /><br />
-<p style="text-align:center;"><label> Choose the File to upload: </label></p><br /><br />
-<p style="text-align:center;"><input type="file" id="myFile" /><br /><br />
-<br /><br />
-<br /><br />
+<!-- header source -->
+<script src="https://www.givengine.org/bower_components/webcomponentsjs/webcomponents-loader.js"></script>
+<link rel="import" href="https://www.givengine.org/components/chart-controller/chart-controller.html">
 
-
-<p style="text-align:center;"><label> Select the ICR file: </label></p><br /><br />
-<p style="text-align:center;"><label> Choose the File to upload: </label></p><br /><br />
-<p style="text-align:center;"><input type="file" id="myFile" /><br /><br />
-
-<br /><br />
-<div class="sequence_input" id="sequences">
-<br /><br />
-
-</div>
-<p style="text-align:center;"><label> Intersect: </label></p><br /><br />
-
-<p style="text-align:center;"><input type="button" id='Intersect' name="scriptbutton" value=" Intersect " onclick="goPython()"></p> <br /><br />
-
+<!-- embed the browser in the web page -->
+<chart-controller
+  ref="hg19"
+  num-of-subs="2"
+  coordinate='["chr18:19140000-19450000", "chr18:19140000-19450000"]'
+  group-id-list='["genes", "CHi-C_promoter"]'
+></chart-controller>
 </body>
