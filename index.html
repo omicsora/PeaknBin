@@ -17,7 +17,8 @@
 <li class="active"><a href="index.html">Home</a></li>
 <li class="active"><a href="about.html">About</a></li>
 <li class="active"><a href="download.html">Download</a></li>
-<li class="active"><a href="visualize.html">Visualization</a></li>
+<li class="active"><a href="visualizemm9.html">Visualization-mm9</a></li>
+<li class="active"><a href="visualizemm10.html">Visualization-mm10</a></li>
 <li class="active"><a href="https://github.com/ankitasks1/PeaknBin" target="_blank">Connect</a></li>
 
 </ul>
@@ -27,20 +28,7 @@
 <p style="text-align:center;"><label><b><font size="5">Select the Peak file</font></b></label></p><br><br>
 <p style="text-align:center;"><label> Choose the File to upload: </label></p>
 <p style="text-align:center;"><label style="font-size:10px;"><i> Format: chr   start   end   ID  </i></label></p><br><br>
-	    <script>
-			  var openFile = function(event) {
-				var input = event.target;
 
-				var reader = new FileReader();
-				reader.onload = function(){
-				  var text = reader.result;
-				  var node = document.getElementById('output');
-				  node.innerText = text;
-				  console.log(reader.result.substring(0, 200));
-				};
-				reader.readAsText(input.files[0]);
-			  };
-    </script>
 <p style="text-align:center;"><input type="file" id="myFile" size="50" accept='text/plain' onchange='openFile(event)'></p><br><br>
 </div>
 <br>
