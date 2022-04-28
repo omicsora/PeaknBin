@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<div class="header">
+    <h1><a style="text-decoration:none; color:black; font-family: 'Times New Roman', serif; "  href="index.html">PeaknBin</a><img  src="image.png" alt="Peak" width="80" height="80"></h1>
+    <p style="color:black;font-size:70%;">Repository of ChIP-Seq peaks in mouse embryonic stem cells</p>
+</div>
+	<title>PeaknBin</title>
+	<link rel = "stylesheet" href="style.css">
+	<link rel = "stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+</head>
+
+    <body>
+        <div class="menu-bar">
+        <ul>
+        <li class="active"><a href="index.html">Home</a></li>
+        <li class="active"><a href="about.html">About</a></li>
+        <li class="active"><a href="download.html">Download</a></li>
+        <li class="active"><a href="visualizemm9.html">View:mm9</a></li>
+        <li class="active"><a href="visualizemm10.html">View:mm10</a></li>
+        <li class="active"><a href="icr.html">mouseICR</a></li>
+        <li class="active"><a href="connect.html">Connect</a></li>
+
+        </ul>
+        </div>
+        <br>
+        <div class="box">
+        <p style="text-align:center;"><label><b><font size="5">Select the Peak file</font></b></label></p><br>
+        <p style="text-align:center;"><label> Choose the File to upload: </label></p>
+        <p style="text-align:center;"><label style="font-size:15px;"><i> (Format: chr   start   end   ID)  </i></label></p><br>
+        <p style="text-align:center;"><input type="file" id="myFile" size="50" accept='text/plain' onchange='openFile(event)'></p><br><br>
+        </div>
+        <div class="box">
+        <p style="text-align:center;"><label><b><font size="5">Select the Bin file</font></b></label></p><br>
+        <p style="text-align:center;"><label> Choose the File to upload: </label></p>
+        <p style="text-align:center;"><label style="font-size:15px;"><i> (Format: chr   start   end   ID) </i></label></p><br>
+        <p style="text-align:center;"><input type="file" id="myFile" size="50"></p><br><br>
+        </div>
+        <div class="sequence_input" id="sequences">
+        </div>
+
+        <div class="box1">
+
+        <p style="text-align:center;"><input type="button" id='Intersect Peak and Bin File' name="scriptbutton" value=" Intersect Peak and Bin File " onclick="location.href='{% url 'script' %}'" style="font-size : 20px;; width: 90%; height: 30px;"></p>
+        {{output_data}}
+        {{website_link}}
+
+        </div>
+
+    </body>
+</html>

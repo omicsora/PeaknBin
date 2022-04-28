@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html>
+<style>
+            table, th, td {
+              border:1px solid black;
+
+            }
+</style>
 <head>
 <meta charset="UTF-8" />
 <div class="header">
-    <h1><a style="text-decoration:none; color:black; font-family: 'Times New Roman', serif; "  href="index.html">PeaknBin</a><img  src="image.png" alt="Peak" width="80" height="80"></h1>
+    <h1><a style="text-decoration:none; color:black; font-family: 'Times New Roman', serif;"  href="index.html">PeaknBin</a><img  src="image.png" alt="Peak" width="80" height="80"></h1>
     <p style="color:black;font-size:70%;">Repository of ChIP-Seq peaks in mouse embryonic stem cells</p>
 </div>
 	<title>PeaknBin</title>
@@ -11,42 +17,35 @@
 	<link rel = "stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
 </head>
 
-    <body>
-        <div class="menu-bar">
-        <ul>
-        <li class="active"><a href="index.html">Home</a></li>
-        <li class="active"><a href="about.html">About</a></li>
-        <li class="active"><a href="download.html">Download</a></li>
-        <li class="active"><a href="visualizemm9.html">View:mm9</a></li>
-        <li class="active"><a href="visualizemm10.html">View:mm10</a></li>
-        <li class="active"><a href="icr.html">mouseICR</a></li>
-        <li class="active"><a href="connect.html">Connect</a></li>
+<body>
+<div class="menu-bar">
+<ul>
+<li class="active"><a href="index.html">About</a></li>
+<li class="active"><a href="download.html">Download</a></li>
+<li class="active"><a href="visualizemm9.html">View:mm9</a></li>
+<li class="active"><a href="visualizemm10.html">View:mm10</a></li>
+<li class="active"><a href="icr.html">mouseICR</a></li>
+<li class="active"><a href="connect.html">Connect</a></li>
 
-        </ul>
-        </div>
-        <br>
-        <div class="box">
-        <p style="text-align:center;"><label><b><font size="5">Select the Peak file</font></b></label></p><br>
-        <p style="text-align:center;"><label> Choose the File to upload: </label></p>
-        <p style="text-align:center;"><label style="font-size:15px;"><i> (Format: chr   start   end   ID)  </i></label></p><br>
-        <p style="text-align:center;"><input type="file" id="myFile" size="50" accept='text/plain' onchange='openFile(event)'></p><br><br>
-        </div>
-        <div class="box">
-        <p style="text-align:center;"><label><b><font size="5">Select the Bin file</font></b></label></p><br>
-        <p style="text-align:center;"><label> Choose the File to upload: </label></p>
-        <p style="text-align:center;"><label style="font-size:15px;"><i> (Format: chr   start   end   ID) </i></label></p><br>
-        <p style="text-align:center;"><input type="file" id="myFile" size="50"></p><br><br>
-        </div>
-        <div class="sequence_input" id="sequences">
-        </div>
+</ul>
+</div>
+<br /><br />
 
-        <div class="box1">
+<div class="about">
+	<p align="center"><b>Publicly available ChIP-Seq data collection and analysis</b></p><br><br>
+	The raw ChIP-Seq datasets of available proteins were collected from Gene expression omnibus (GEO) using a search query to specific to mouse embryonic stem cells (mESCs).<br><br>
+	<p align="center"><b>Search Query</b></p><br><br>
 
-        <p style="text-align:center;"><input type="button" id='Intersect Peak and Bin File' name="scriptbutton" value=" Intersect Peak and Bin File " onclick="location.href='{% url 'script' %}'" style="font-size : 20px;; width: 90%; height: 30px;"></p>
-        {{output_data}}
-        {{website_link}}
+	<table style="width:80%; height:20%" class="center">
+		<tr>
+		<th style="text-align:center; "><i>mus musculus[Organism] AND "Genome binding/occupancy profiling by high throughput sequencing"[DataSet Type] AND ("embryonic stem"[All Fields] OR "ES"[All Fields] OR "mES"[All Fields] OR "mESC"[All Fields] OR "mESCs"[All Fields] OR "ESCs"[All Fields] OR "ESC"[All Fields])</i><a href="#"></a></th>
+		</tr></table>
 
-        </div>
+	<br><br>The search query had given 1890 hits as on 01.12.2021 comprising 321 TFs.<br>
+	<p align="left"><br>Analysis Pipeline: <br><br>The raw fastq files were downloaded using SRA-Toolkit (NCBI). Low quality reads (phred < 20) and  shorter reads were filtered out using Trimmomatic (v0.36) (Bolger et al., 2014). Since samples had different read lengths and different read modes (single and paired-end), we implemented a different pipeline accordingly. The alignment was performed to either mm9 or mm10 mouse reference genome with bowtie (v1.2.1.1) or with bowtie2 (v2.3.3.1). Uniquely mapped reads were obtained either by setting -m 1 option in bowtie1 or by applying samtools view -q 20 to bowtie2 aligned output file. The reads were deduplicated using a custom shell script. Peak calling was done using MACS1 (v1.4.2) (Zhang et al., 2008). In bedgraph files, scores were converted to reads per million (RPM) and converted to bigwig for uploading to UCSC genome browser (genome version mm9 or mm10).</p><br><br>
 
-    </body>
-</html>
+</div>
+
+<p align="left"><b>Contact: ankitverma9079@gmail.com</b></p><br><br>
+
+</body>
